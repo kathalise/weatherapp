@@ -3,13 +3,37 @@
     <head>
         <meta charset="UTF-8" />
         <title>Weather</title>
+        <link
+            rel="stylesheet"
+            href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+            integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+            crossorigin="anonymous"
+        />
+        <link href="css/styles.css" rel="stylesheet" />
     </head>
     <body>
-        <h1>Weather Checker</h1>
+        <h1>Your Weather Checker</h1>
+
         <form action="/" method="post">
-            <label for="city">City Name:</label>
-            <input type="Text" name="city"  placeholder="e.g. Berlin"/>
-            <button type="submit" name="submit">Go</button>
-        </form>    
+            <!-- <label for="city">City Name:</label> -->
+            <div class="input-group mb-3">
+                <input
+                    class="form-control"
+                    aria-describedby="basic-addon2"
+                    type="Text"
+                    name="city"
+                    placeholder="Enter Location Name (e.g. Berlin)"
+                />
+                <div class="input-group-append">
+                    <button
+                        class="btn btn-outline-secondary"
+                        type="submit"
+                        name="submit"
+                    >
+                        Go
+                    </button>
+                </div>
+            </div>
+        </form>
     </body>
 </html>
