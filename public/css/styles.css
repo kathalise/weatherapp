@@ -2,3 +2,11 @@ body {
     background-color: pink;
     margin: 10%;
 }
+
+.header-icon {
+    display: flex;
+}
+
+.new-search {
+    margin-top: 5%;
+}

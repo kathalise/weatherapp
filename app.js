@@ -5,6 +5,7 @@ const bodyParser = require("body-parser");
 
 // const handlebars = require("express-handlebars");
 const app = express();
+app.set("view engine", "ejs");
 // //Sets our app to use the handlebars engine
 // app.set("view engine", "handlebars");
 
@@ -52,29 +53,30 @@ app.post("/", function (req, res) {
                     "@2x.png";
 
                 const image = "<img src=" + icon + ">";
+                const city = weatherData.name;
 
-                res.write(
-                    "<p>The weather in " +
-                        weatherData.name +
-                        " is currently " +
-                        description +
-                        ".</p>"
-                );
-                res.write(
-                    "<h1>The temperature in " +
-                        weatherData.name +
-                        " is " +
-                        temp +
-                        " degrees C.</h1>"
-                );
-                res.write("<img src=" + icon + ">");
+                // res.write(
+                //     "<p>The weather in " +
+                //         weatherData.name +
+                //         " is currently " +
+                //         description +
+                //         ".</p>"
+                // );
+                // res.write(
+                //     "<h1>The temperature in " +
+                //         weatherData.name +
+                //         " is " +
+                //         temp +
+                //         " degrees C.</h1>"
+                // );
+                // res.write("<img src=" + icon + ">");
 
-                // var name = "hello";
-                // res.render(__dirname + "/weatherResult.html", {
-                //     name: name,
-                // });
-                // res.sendFile(__dirname + "/weatherResult.html");
-                res.send();
+                res.render("weather", {
+                    cityName: city,
+                    weatherDescription: description,
+                    cityTemp: temp,
+                    weatherIcon: icon,
+                });
             } else {
                 res.sendFile(__dirname + "/failure.html");
             }

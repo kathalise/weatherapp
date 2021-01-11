@@ -12,10 +12,18 @@
         <link href="css/styles.css" rel="stylesheet" />
     </head>
     <body>
-        <h2>Oops..</h2>
-        <p>Looks like something went wrong.</p>
+        <div class="header-icon">
+            <h1><%= cityName %></h1>
+            <img src=" <%= weatherIcon %>" />
+        </div>
+        <p>
+            The weather in <%= cityName %> is currently <%= weatherDescription
+            %>. <br />
+            The temperature is <%= cityTemp %> °C.
+        </p>
+
         <form class="new-search" action="/failure" method="POST">
-            <button class="btn btn-lg btn-warning">Try Again</button>
+            <button class="btn btn-lg btn-light">New Search</button>
         </form>
     </body>
 </html>
